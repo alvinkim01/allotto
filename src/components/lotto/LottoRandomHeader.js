@@ -11,7 +11,7 @@ class LottoRandomHeader extends Component {
     }
 
     componentDidMount(){
-        axios.get('http://localhost:5000/posts/lottos/890').then((res)=>{
+        axios.get('http://localhost:5000/posts/lottos/900').then((res)=>{
             const data = res.data;
             console.log(data);
             if(data){

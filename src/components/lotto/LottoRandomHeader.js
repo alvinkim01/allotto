@@ -10,6 +10,14 @@ class LottoRandomHeader extends Component {
         drwNo : 0
     }
 
+    aiLottoNumber(){
+        // const url = '/api/customers/' + id;
+        // fetch(url, {
+        //    method: 'DELETE' 
+        // });
+        // this.props.stateRefresh();
+    }
+
     componentDidMount(){
         
           axios.get('http://localhost:5000/posts/lottos/900').then((res)=>{
@@ -33,8 +41,9 @@ class LottoRandomHeader extends Component {
         return(
             <div className="lotto-random-header">
                 <div className="lotto-title">
-                    로또 랜덤 번호 생성기
-                    <span>{this.state.drwNo}회차</span>
+                    AI Lotto
+                    {/* <span>{this.state.drwNo}회차</span> */}
+                    <button onClick={(e) => {this.aiLottoNumber()}}>AI Lotto번호 예측</button>
                 </div>
                 <div>
                     <LottoBoxComponent

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Button from '@material-ui/core/Button';
 import "./NumberPlateComponent.css";
 import NumberPlateBoxComponent from './NumberPlateBoxComponent';
 
@@ -18,7 +19,7 @@ class NumberPlateComponent extends Component {
                     />
                 )}
                 </div>
-                <button onClick={this.props.handleButtonOnClick} className="number-button">번호 생성</button>
+                <Button onClick={this.props.handleButtonOnClick} variant="contained" color="primary">랜덤 로또번호 생성</Button>
             </div>
         );
     }

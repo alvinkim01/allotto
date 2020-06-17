@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import * as axios from 'axios';
+//import * as axios from 'axios';
+import Button from '@material-ui/core/Button';
 import firebase from './Firebase';
 import "./LottoRandomHeader.css";
 import LottoBoxComponent from './lotto-box/LottoBoxComponent';
@@ -31,6 +32,7 @@ class LottoRandomHeader extends Component {
                 lottoNumber.push(lottonum.drwNo3);
                 lottoNumber.push(lottonum.drwNo4);
                 lottoNumber.push(lottonum.drwNo5);
+                lottoNumber.sort();
                 this.setState({lottoNumber});
                 });                  
 			});	
@@ -61,7 +63,7 @@ class LottoRandomHeader extends Component {
                 <div className="lotto-title">
                     AI 로또번호 생성기
                     {/* <span>{this.state.drwNo}</span> */}
-                    <button onClick={this.handleOnClick} className="number-button">인공지능 로또번호생성</button>
+                    <Button onClick={this.handleOnClick} variant="contained" color="secondary">인공지능 로또번호생성</Button>
                 </div>
                 <div>
                     <LottoBoxComponent

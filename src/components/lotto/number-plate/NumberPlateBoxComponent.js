@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import "./NumberPlateBoxComponent.css";
+import Checkbox from '@material-ui/core/Checkbox';
 
 class NumberPlateBoxComponent extends Component {
 
@@ -11,11 +12,17 @@ class NumberPlateBoxComponent extends Component {
     render(){
         return(
             <div className="number-plate-box-contents">
-                <div className="number-plate-box">
-                    <input
+                <div>
+                {/* <div className="number-plate-box"> */}
+                    {/* <input
                         type="checkbox"
                         checked={this.props.selected}
                         onChange={this.handleChange}
+                    /> */}
+                     <Checkbox
+                        checked={this.props.selected}
+                        onChange={this.handleChange}
+                        inputProps={{ 'aria-label': 'primary checkbox' }}
                     />
                     <span>{this.props.number}</span>
                 </div>

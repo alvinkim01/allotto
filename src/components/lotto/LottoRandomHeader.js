@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 //import * as axios from 'axios';
-import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core';
 import firebase from './Firebase';
 import "./LottoRandomHeader.css";
 import LottoBoxComponent from './lotto-box/LottoBoxComponent';
@@ -19,6 +19,7 @@ class LottoRandomHeader extends Component {
     }
 
     handleOnClick=()=>{
+        // history.push('/payment')
         firebase.firestore().collection('lotto')
 		.where("docid".trim(), "==", '9160')
 		.get()

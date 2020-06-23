@@ -7,7 +7,8 @@ class LottoBoxComponent extends Component {
     render(){
         const numbers = this.props.lottoNumber.slice(0,6);
         const b_number = this.props.lottoNumber[6];
-        if (b_number){     return(
+        if (b_number){     
+            return(
             <React.Fragment>
             <div id="numbers">
                 <LotteryItem

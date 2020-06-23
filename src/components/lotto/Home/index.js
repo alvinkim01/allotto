@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import LottoRandomHeader from './lotto/LottoRandomHeader';
-import LottoRandomSideMenu from './lotto/LottoRandomSideMenu';
-import LottoRandomContents from './lotto/LottoRandomContents';
+import { withRouter } from 'react-router-dom';
+import LottoRandomHeader from '../LottoRandomHeader';
+import LottoRandomSideMenu from '../LottoRandomSideMenu';
+import LottoRandomContents from '../LottoRandomContents';
 
-import "./LottoRandomTemplate.css"
+import "./index.css";
 
-class LottoRandomTemplate extends Component {
+class Home extends Component {
 
     state = {
         selected : [],
@@ -83,4 +84,4 @@ class LottoRandomTemplate extends Component {
     }
 }
 
-export default LottoRandomTemplate;
+export default withRouter(Home);

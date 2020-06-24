@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Form, Select, Input, Switch, Button } from 'antd';
-import Icon from '@ant-design/icons';
+import { Form, Select, Icon, Input, Switch, Button } from 'antd';
 import { withRouter } from 'react-router-dom';
 import { withUserAgent } from 'react-useragent';
 import queryString from 'query-string';
@@ -181,7 +180,7 @@ function Payment({ history, form, ua }) {
     <Wrapper>
       <Header>아임포트 결제 테스트</Header>
       <FormContainer onSubmit={handleSubmit}>
-        <Item label="PG사">
+        {/* <Item label="PG사">
           {getFieldDecorator('pg', {
             initialValue: 'html5_inicis',
           })(
@@ -270,7 +269,7 @@ function Payment({ history, form, ua }) {
           })(
             <Input size="large" type="number" addonBefore="결제금액" />,
           )}
-        </Item>
+        </Item> 
         <Item>
           {getFieldDecorator('merchant_uid', {
             initialValue: `min_${new Date().getTime()}`,
@@ -278,7 +277,7 @@ function Payment({ history, form, ua }) {
           })(
             <Input size="large" addonBefore="주문번호" />,
           )}
-        </Item>
+        </Item> */}
         <Item>
           {getFieldDecorator('buyer_name', {
             initialValue: '홍길동',

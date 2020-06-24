@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 //import * as axios from 'axios';
-import Button from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 import firebase from './Firebase';
 import "./LottoRandomHeader.css";
 import LottoBoxComponent from './lotto-box/LottoBoxComponent';
+import { withRouter } from 'react-router-dom';
 
 class LottoRandomHeader extends Component {
 
@@ -18,27 +19,27 @@ class LottoRandomHeader extends Component {
         drwNo5 :''
     }
 
-    handleOnClick=()=>{
-        // history.push('/payment')
-        firebase.firestore().collection('lotto')
-		.where("docid".trim(), "==", '9160')
-		.get()
-		.then(snap => {
-			snap.forEach(doc => {
-                const lottonum = doc.data();
-                const lottoNumber = [];
-                lottoNumber.push(lottonum.drwNo0);
-                lottoNumber.push(lottonum.drwNo1);
-                lottoNumber.push(lottonum.drwNo2);
-                lottoNumber.push(lottonum.drwNo3);
-                lottoNumber.push(lottonum.drwNo4);
-                lottoNumber.push(lottonum.drwNo5);
-                lottoNumber.sort();
-                this.setState({lottoNumber});
-                });                  
-			});	
+    // handleOnClick=()=>{
+    //     history.push('/payment')
+        // firebase.firestore().collection('lotto')
+		// .where("docid".trim(), "==", '9160')
+		// .get()
+		// .then(snap => {
+		// 	snap.forEach(doc => {
+        //         const lottonum = doc.data();
+        //         const lottoNumber = [];
+        //         lottoNumber.push(lottonum.drwNo0);
+        //         lottoNumber.push(lottonum.drwNo1);
+        //         lottoNumber.push(lottonum.drwNo2);
+        //         lottoNumber.push(lottonum.drwNo3);
+        //         lottoNumber.push(lottonum.drwNo4);
+        //         lottoNumber.push(lottonum.drwNo5);
+        //         lottoNumber.sort();
+        //         this.setState({lottoNumber});
+        //         });                  
+		// 	});	
 
-    }  
+    // }  
     // componentDidMount(){
     //     axios.get('http://localhost:5000/lottos/897').then((res)=>{
     //         const data = res.data;
@@ -64,7 +65,7 @@ class LottoRandomHeader extends Component {
                 <div className="lotto-title">
                     AI 로또번호 생성기
                     {/* <span>{this.state.drwNo}</span> */}
-                    <Button onClick={this.handleOnClick} variant="contained" color="secondary">인공지능 로또번호생성</Button>
+                    <Button onClick={() => this.props.history.push('/payment')} variant="contained" color="secondary">AI Lotto번호 결제</Button>
                 </div>
                 <div>
                     <LottoBoxComponent
@@ -75,4 +76,4 @@ class LottoRandomHeader extends Component {
         );
     }
 }
-export default LottoRandomHeader;
+export default withRouter(LottoRandomHeader);

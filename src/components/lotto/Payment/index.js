@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+<<<<<<< HEAD
 import { Form, Select, Input, Switch, Button} from 'antd';
 import Icon from '@ant-design/icons';
+=======
+import { Form, Select, Icon, Input, Switch, Button } from 'antd';
+>>>>>>> f30bf75bfa2bd10fbf398402d559fcc1acee5af1
 import { withRouter } from 'react-router-dom';
 import { withUserAgent } from 'react-useragent';
 import queryString from 'query-string';
@@ -270,7 +274,7 @@ function Payment({ history, form, ua }) {
           })(
             <Input size="large" type="number" addonBefore="결제금액" />,
           )}
-        </Item>
+        </Item> 
         <Item>
           {getFieldDecorator('merchant_uid', {
             initialValue: `min_${new Date().getTime()}`,

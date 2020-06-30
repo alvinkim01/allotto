@@ -4,7 +4,22 @@ import LottoRandomHeader from '../LottoRandomHeader';
 import LottoRandomSideMenu from '../LottoRandomSideMenu';
 import LottoRandomContents from '../LottoRandomContents';
 
-import "./index.css";
+// import "./index.css";
+// import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1,
+    },
+    paper: {
+      padding: theme.spacing(2),
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
+    },
+  }));
 
 class Home extends Component {
 
@@ -66,21 +81,48 @@ class Home extends Component {
 
 
     render(){
-        return(
-            <div className="lotto-random-template">
+        const classes = useStyles();
+
+        return (
+          <div className={classes.root}>
+            <Grid container spacing={1}>
+              <Grid item xs={12}>
                 <LottoRandomHeader/>
-                <div className="lotto-random-main">
-                    <LottoRandomSideMenu
+                <Paper className={classes.paper}>xs=12</Paper>
+              </Grid>
+              <Grid item xs={6}>
+                <LottoRandomSideMenu
                         selected={this.state.selected}
                         handleChange={this.handleChange}
                         handleButtonOnClick={this.handleButtonOnClick}
                     />
-                    <LottoRandomContents
+                <Paper className={classes.paper}>xs=6</Paper>
+              </Grid>
+              <Grid item xs={6}>
+                <Paper className={classes.paper}>xs=6</Paper>
+                <LottoRandomContents
                         lottoNumbers={this.state.lottoNumbers}
-                    />
-                </div>
-            </div>
+                />
+              </Grid>
+          
+            </Grid>
+          </div>
         );
+        // return(
+        //     <div className="lotto-random-template">
+        //         <LottoRandomHeader/>
+        //         <div className="lotto-random-main">
+        //             <LottoRandomSideMenu
+        //                 selected={this.state.selected}
+        //                 handleChange={this.handleChange}
+        //                 handleButtonOnClick={this.handleButtonOnClick}
+        //             />
+        //             <LottoRandomContents
+        //                 lottoNumbers={this.state.lottoNumbers}
+        //             />
+        //         </div>
+        //     </div>
+        // );
     }
 }
 

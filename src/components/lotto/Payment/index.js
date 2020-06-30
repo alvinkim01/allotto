@@ -180,7 +180,7 @@ function Payment({ history, form, ua }) {
     <Wrapper>
       <Header>아임포트 결제 테스트</Header>
       <FormContainer onSubmit={handleSubmit}>
-        {/* <Item label="PG사">
+        <Item label="PG사">
           {getFieldDecorator('pg', {
             initialValue: 'html5_inicis',
           })(
@@ -277,7 +277,7 @@ function Payment({ history, form, ua }) {
           })(
             <Input size="large" addonBefore="주문번호" />,
           )}
-        </Item> */}
+        </Item>
         <Item>
           {getFieldDecorator('buyer_name', {
             initialValue: '홍길동',

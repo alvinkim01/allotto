@@ -8,7 +8,7 @@ class LottoRandomContents extends Component {
         const {lottoNumbers} = this.props;
         
         return(
-            <div className="lotto-random-contents">
+            <div >
                 {lottoNumbers.map((lottoNumber, i) => 
                 <LottoBoxComponent
                 key={i}

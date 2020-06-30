@@ -5,7 +5,7 @@ import NumberPlateComponent from './number-plate/NumberPlateComponent';
 class LottoRandomSideMenu extends Component {
     render(){
         return(
-            <div className="lotto-random-sidemenu">
+            <div >
                 <NumberPlateComponent
                     selected={this.props.selected}
                     handleChange={this.props.handleChange}

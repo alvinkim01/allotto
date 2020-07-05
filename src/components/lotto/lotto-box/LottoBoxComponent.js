@@ -26,7 +26,7 @@ class LottoBoxComponent extends Component {
                 />
                 <LotteryItem
                     index="2"
-                    color="blue"
+                    color="green"
                     number={numbers[2]}
                     decrypting={false}
                 />
@@ -38,7 +38,7 @@ class LottoBoxComponent extends Component {
                 />
                 <LotteryItem
                     index="4"
-                    color="red"
+                    color="yellowred"
                     number={numbers[4]}
                     decrypting={true}
                 />
@@ -48,13 +48,13 @@ class LottoBoxComponent extends Component {
                     number={numbers[5]}
                     decrypting={false}
                 />                
-                <div className="plus">+</div>
+                {/* <div className="plus">+</div>
                 <LotteryItem
                     index="6"
                     color="bonus"
                     number={b_number}
                     decrypting={false}
-                />
+                /> */}
             </div>  
         </React.Fragment>
             // <div className="lotto-box-contents">
@@ -90,7 +90,7 @@ class LottoBoxComponent extends Component {
                 />
                 <LotteryItem
                     index="2"
-                    color="blue"
+                    color="green"
                     number={numbers[2]}
                     decrypting={false}
                 />
@@ -102,7 +102,7 @@ class LottoBoxComponent extends Component {
                 />
                 <LotteryItem
                     index="4"
-                    color="red"
+                    color="yellowred"
                     number={numbers[4]}
                     decrypting={true}
                 />

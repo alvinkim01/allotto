@@ -1,10 +1,17 @@
 import React, {Component} from 'react';
+import { withStyles } from '@material-ui/core/styles';
 //import * as axios from 'axios';
 import Button from '@material-ui/core/Button';
 import firebase from './Firebase';
 import "./LottoRandomHeader.css";
 import LottoBoxComponent from './lotto-box/LottoBoxComponent';
 import { withRouter } from 'react-router-dom';
+
+const useStyles = withStyles((theme) => ({
+    button: {
+      margin: theme.spacing(1),
+    },
+  }));
 
 class LottoRandomHeader extends Component {
 
@@ -20,27 +27,46 @@ class LottoRandomHeader extends Component {
     }
 
     // handleOnClick=()=>{
-    //     history.push('/payment')
-        // firebase.firestore().collection('lotto')
-		// .where("docid".trim(), "==", '9160')
-		// .get()
-		// .then(snap => {
-		// 	snap.forEach(doc => {
-        //         const lottonum = doc.data();
-        //         const lottoNumber = [];
-        //         lottoNumber.push(lottonum.drwNo0);
-        //         lottoNumber.push(lottonum.drwNo1);
-        //         lottoNumber.push(lottonum.drwNo2);
-        //         lottoNumber.push(lottonum.drwNo3);
-        //         lottoNumber.push(lottonum.drwNo4);
-        //         lottoNumber.push(lottonum.drwNo5);
-        //         lottoNumber.sort();
-        //         this.setState({lottoNumber});
-        //         });                  
-		// 	});	
+    //     // history.push('/payment')
+    //     firebase.firestore().collection('lotto')
+	// 	.where("docid".trim(), "==", '9160')
+	// 	.get()
+	// 	.then(snap => {
+	// 		snap.forEach(doc => {
+    //             const lottonum = doc.data();
+    //             const lottoNumber = [];
+    //             lottoNumber.push(lottonum.drwNo0);
+    //             lottoNumber.push(lottonum.drwNo1);
+    //             lottoNumber.push(lottonum.drwNo2);
+    //             lottoNumber.push(lottonum.drwNo3);
+    //             lottoNumber.push(lottonum.drwNo4);
+    //             lottoNumber.push(lottonum.drwNo5);
+    //             lottoNumber.sort();
+    //             this.setState({lottoNumber});
+    //             });                  
+	// 		});	
 
     // }  
-    // componentDidMount(){
+
+    componentDidMount(){
+        firebase.firestore().collection('lotto')
+		.where("docid".trim(), "==", '9160')
+		.get()
+		.then(snap => {
+			snap.forEach(doc => {
+                const lottonum = doc.data();
+                const lottoNumber = [];
+                lottoNumber.push(lottonum.drwNo0);
+                lottoNumber.push(lottonum.drwNo1);
+                lottoNumber.push(lottonum.drwNo2);
+                lottoNumber.push(lottonum.drwNo3);
+                lottoNumber.push(lottonum.drwNo4);
+                lottoNumber.push(lottonum.drwNo5);
+                lottoNumber.sort();
+                this.setState({lottoNumber});
+                });                  
+            });	
+        }
     //     axios.get('http://localhost:5000/lottos/897').then((res)=>{
     //         const data = res.data;
     //         // console.log(data);
@@ -60,14 +86,29 @@ class LottoRandomHeader extends Component {
     // }
 
     render(){
+        const classes = this.props;
         return(
             <div >
-                <div >
+                <div className="lotto-title" >
                     AI 로또번호 생성기
-                    {/* <span>{this.state.drwNo}</span> */}
-                    <Button onClick={() => this.props.history.push('/payment')} variant="contained" color="secondary">AI Lotto번호 결제</Button>
+                    <span>{this.state.drwNo}</span>
+                    
                 </div>
+                {/* <div>
+                 <Button
+                    onClick={this.handleOnClick}
+                    variant="contained"
+                    color="primary"
+                    className={classes.button}
+                    // startIcon={<CloudUploadIcon />}
+                >
+                   AI 엔진 예측 번호
+                </Button> 
+                 <Button onClick={this.handleOnClick} variant="contained" color="primary">인공지능 엔진으로 예측한 번호 </Button>
+                 <Button onClick={() => this.props.history.push('/payment')} variant="contained" color="secondary">AI Lotto번호 결제</Button>
+                </div> */}
                 <div>
+                    
                     <LottoBoxComponent
                         lottoNumber={this.state.lottoNumber}
                     />

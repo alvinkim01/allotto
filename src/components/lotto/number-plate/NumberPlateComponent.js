@@ -19,7 +19,7 @@ class NumberPlateComponent extends Component {
                     />
                 )}
                 </div>
-                <Button onClick={this.props.handleButtonOnClick} variant="contained" color="primary">랜덤 로또번호 생성</Button>
+                <Button onClick={this.props.handleButtonOnClick} variant="contained" color="primary">랜덤번호</Button>
             </div>
         );
     }

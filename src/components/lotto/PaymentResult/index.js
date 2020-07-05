@@ -1,12 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-<<<<<<< HEAD
 import { Button } from 'antd';
 import Icon from '@ant-design/icons';
-=======
-import { Button,Icon } from 'antd';
-// import Icon from '@ant-design/icons';
->>>>>>> f30bf75bfa2bd10fbf398402d559fcc1acee5af1
 import { withRouter } from 'react-router-dom';
 import queryString from 'query-string';
 

@@ -9,19 +9,10 @@ import { withRouter } from 'react-router-dom';
 import LottoRandomHeader from '../LottoRandomHeader';
 import LottoRandomSideMenu from '../LottoRandomSideMenu';
 import LottoRandomContents from '../LottoRandomContents';
-
+// import React from 'react';
 // import "./index.css";
-<<<<<<< HEAD
 
 const useStyles = withStyles((theme) => ({
-=======
-// import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-
-const useStyles = makeStyles((theme) => ({
->>>>>>> f30bf75bfa2bd10fbf398402d559fcc1acee5af1
     root: {
       flexGrow: 1,
     },
@@ -93,7 +84,6 @@ class Home extends Component {
 
 
     render(){
-<<<<<<< HEAD
         const classes = this.props;
 
         return(
@@ -102,28 +92,14 @@ class Home extends Component {
               <Grid item xs={12}>
                 <LottoRandomHeader/>
               </Grid>    
-              <Grid item xs={4} sm={3}>
+              <Grid item xs={5} sm={3}>
               <LottoRandomSideMenu
-=======
-        const classes = useStyles();
-
-        return (
-          <div className={classes.root}>
-            <Grid container spacing={1}>
-              <Grid item xs={12}>
-                <LottoRandomHeader/>
-                <Paper className={classes.paper}>xs=12</Paper>
-              </Grid>
-              <Grid item xs={6}>
-                <LottoRandomSideMenu
->>>>>>> f30bf75bfa2bd10fbf398402d559fcc1acee5af1
                         selected={this.state.selected}
                         handleChange={this.handleChange}
                         handleButtonOnClick={this.handleButtonOnClick}
                     />
-<<<<<<< HEAD
               </Grid>
-              <Grid item xs={8} sm={3}>
+              <Grid item xs={7} sm={3}>
               <LottoRandomContents lottoNumbers={this.state.lottoNumbers} />
               </Grid>
          
@@ -143,19 +119,7 @@ class Home extends Component {
             //         />
             //     </div>
             // </div>
-=======
-                <Paper className={classes.paper}>xs=6</Paper>
-              </Grid>
-              <Grid item xs={6}>
-                <Paper className={classes.paper}>xs=6</Paper>
-                <LottoRandomContents
-                        lottoNumbers={this.state.lottoNumbers}
-                />
-              </Grid>
-          
-            </Grid>
-          </div>
->>>>>>> f30bf75bfa2bd10fbf398402d559fcc1acee5af1
+
         );
         // return(
         //     <div className="lotto-random-template">

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Form, Select, Input, Switch, Button} from 'antd';
-import Icon from '@ant-design/icons';
+import { Form, Select, Input, Switch, Button,Icon} from 'antd';
+// import Icon from '@ant-design/icons';
 import { withRouter } from 'react-router-dom';
 import { withUserAgent } from 'react-useragent';
 import queryString from 'query-string';

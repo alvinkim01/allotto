@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button } from 'antd';
-import Icon from '@ant-design/icons';
+import { Button,Icon } from 'antd';
+// import Icon from '@ant-design/icons';
 import { withRouter } from 'react-router-dom';
 import queryString from 'query-string';
 

@@ -17,7 +17,7 @@ class LottoRandomHeader extends Component {
 
     state = {
         lottoNumber : [],
-        drwNo : 0,
+        docid : '',
         drwNo0 :'',
         drwNo1 :'',
         drwNo2 :'',
@@ -50,12 +50,13 @@ class LottoRandomHeader extends Component {
 
     componentDidMount(){
         firebase.firestore().collection('lotto')
-		.where("docid".trim(), "==", '9160')
+		.where("docid".trim(), "==", '916').where("No","==",'0')
 		.get()
 		.then(snap => {
 			snap.forEach(doc => {
                 const lottonum = doc.data();
                 const lottoNumber = [];
+                lottoNumber.push(lottonum.docid);
                 lottoNumber.push(lottonum.drwNo0);
                 lottoNumber.push(lottonum.drwNo1);
                 lottoNumber.push(lottonum.drwNo2);
@@ -91,8 +92,9 @@ class LottoRandomHeader extends Component {
             <div >
                 <div className="lotto-title" >
                     AI 로또번호 생성기
-                    <span>{this.state.drwNo}</span>
-                    
+                    <p></p>
+                    <span>{this.state.docid}</span>
+                    <p>회차 AI선정 로또번호</p>
                 </div>
                 {/* <div>
                  <Button

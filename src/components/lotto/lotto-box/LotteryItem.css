@@ -67,11 +67,11 @@ h1 {
 }
 
 #numbers .ball {
-    width: 36px;
-    height: 36px;
+    width: 30px;
+    height: 30px;
     margin-bottom: 0px;
     line-height: 38px;
-    font-size: 25px;
+    font-size: 20px;
     border-radius: 50%;
     text-align: center;
 }
@@ -118,7 +118,7 @@ h1 {
 
 @media screen and (min-width: 335px) {
     #numbers {
-        width: 290px;
+        width: 250px;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;

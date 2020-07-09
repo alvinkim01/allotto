@@ -19,7 +19,7 @@ class NumberPlateComponent extends Component {
                     />
                 )}
                 </div>
-                <Button onClick={this.props.handleButtonOnClick} variant="contained" color="primary">랜덤번호</Button>
+                <Button onClick={this.props.handleButtonOnClick} variant="contained" color="primary">랜덤번호생성</Button>
             </div>
         );
     }

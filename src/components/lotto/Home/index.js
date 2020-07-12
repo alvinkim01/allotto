@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-// import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 
@@ -9,12 +7,10 @@ import { withRouter } from 'react-router-dom';
 import LottoRandomHeader from '../LottoRandomHeader';
 import LottoRandomSideMenu from '../LottoRandomSideMenu';
 import LottoRandomContents from '../LottoRandomContents';
-// import React from 'react';
-// import "./index.css";
 
 const useStyles = withStyles((theme) => ({
     root: {
-      flexGrow: 1,
+      flexGrow: 14,
     },
     paper: {
       padding: theme.spacing(2),
@@ -91,7 +87,8 @@ class Home extends Component {
             <Grid container spacing={1}>
               <Grid item xs={12}>
                 <LottoRandomHeader/>
-              </Grid>    
+              </Grid> 
+                 
               <Grid item xs={5} sm={3}>
               <LottoRandomSideMenu
                         selected={this.state.selected}

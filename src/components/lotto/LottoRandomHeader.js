@@ -50,13 +50,15 @@ class LottoRandomHeader extends Component {
 
     componentDidMount(){
         firebase.firestore().collection('lotto')
-		.where("docid".trim(), "==", '916').where("No","==",'0')
+        // .where("docid".trim(), "==", '919').where("No","==",'0')
+        .where("No","==",'0')
 		.get()
 		.then(snap => {
 			snap.forEach(doc => {
                 const lottonum = doc.data();
+                console.log(lottonum);
                 const lottoNumber = [];
-                lottoNumber.push(lottonum.docid);
+                // lottoNumber.push(lottonum.docid);
                 lottoNumber.push(lottonum.drwNo0);
                 lottoNumber.push(lottonum.drwNo1);
                 lottoNumber.push(lottonum.drwNo2);
@@ -64,7 +66,9 @@ class LottoRandomHeader extends Component {
                 lottoNumber.push(lottonum.drwNo4);
                 lottoNumber.push(lottonum.drwNo5);
                 lottoNumber.sort();
-                this.setState({lottoNumber});
+                this.setState({docid:lottonum.docid,
+                               No:lottonum.No,
+                               lottoNumber});
                 });                  
             });	
         }
@@ -91,10 +95,11 @@ class LottoRandomHeader extends Component {
         return(
             <div >
                 <div className="lotto-title" >
-                    AI 로또번호 생성기
-                    <p></p>
-                    <span>{this.state.docid}</span>
-                    <p>회차 AI선정 로또번호</p>
+                   <span>{this.state.docid}</span>
+                    회차 AI 로또번호
+                </div>
+                <div >
+                   <p>기존 1회부터 {this.state.docid-1} 까지 로또당첨번호를 AI가 분석하여 예측한 로또번호 </p>
                 </div>
                 {/* <div>
                  <Button

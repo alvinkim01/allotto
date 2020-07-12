@@ -8,6 +8,9 @@ class NumberPlateComponent extends Component {
     render(){
         return(
             <div>
+                <p>7개 이상의 번호를 선택하시고 로또번호 생성 버튼을 연속해서 원하는 회수만큼 누르십시요.</p>
+                <Button onClick={this.props.handleButtonOnClick} variant="contained" color="primary">로또번호 생성</Button>
+                
                 <div className="number-plate-contents">
                 { this.props.selected.map((select, index) =>
                     <NumberPlateBoxComponent
@@ -18,8 +21,7 @@ class NumberPlateComponent extends Component {
                     
                     />
                 )}
-                </div>
-                <Button onClick={this.props.handleButtonOnClick} variant="contained" color="primary">랜덤번호생성</Button>
+                </div>                
             </div>
         );
     }

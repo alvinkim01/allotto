@@ -118,7 +118,7 @@ h1 {
 
 @media screen and (min-width: 335px) {
     #numbers {
-        width: 150px;
+        width: 137px;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;

@@ -89,14 +89,14 @@ class Home extends Component {
                 <LottoRandomHeader/>
               </Grid> 
                  
-              <Grid item xs={7} sm={7}>
+              <Grid item xs={8} sm={8}>
               <LottoRandomSideMenu
                         selected={this.state.selected}
                         handleChange={this.handleChange}
                         handleButtonOnClick={this.handleButtonOnClick}
                     />
               </Grid>
-              <Grid item xs={5} sm={5}>
+              <Grid item xs={4} sm={4}>
               <LottoRandomContents lottoNumbers={this.state.lottoNumbers} />
               </Grid>
          

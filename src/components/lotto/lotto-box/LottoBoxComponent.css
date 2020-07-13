@@ -1,7 +1,7 @@
 .lotto-box{
-    height: 60px;
+    height: 30px;
     display: flex;
-    margin: 20px;
+    margin: 10px;
     border: 1px solid #aeaeae;
     padding-left: 25px;
 }
